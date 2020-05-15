@@ -12,7 +12,24 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="mt-4 mb-4 text-center">Welcome to the chat page!</h1>
+    <h1 class="mt-4 mb-4 text-center">Welcome to the chats page!</h1>
+    <h3 class="text-center d-block">
+        Select any chat and start messaging
+    </h3>
+    <div class="row">
+        {% for chat in chats %}
+        <div class="col-12 col-md-6">
+            <a href="{{ chat.id }}" style="text-decoration: none; color: black;">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ chat.name }}</h4>
+                        <p class="card-text">{{ chat.description }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
